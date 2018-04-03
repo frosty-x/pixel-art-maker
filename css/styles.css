@@ -1,0 +1,332 @@
+/************************************************
+Body
+************************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+/* Defining color palette */
+:root {
+  --color-gray-light: #eee;
+  --color-gray-medium: #bdbdbd;
+  --color-gray-dark: #757575;
+  --color-accent: rgb(252, 152, 214);
+}
+
+/* Background and primary font */
+body,
+button,
+input,
+textarea {
+  background-image: url('../images/bg.png');
+  color: var(--color-gray-dark);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Icon font styling */
+.material-icons {
+  color: #444;
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  vertical-align: middle;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+
+/************************************************
+Headings
+************************************************/
+
+h1 {
+  font-family: 'Megrim', cursive;
+  font-size: 70px;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 100;
+  letter-spacing: .1em;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: 300;
+  /* margin-bottom: 50px; */
+  padding-bottom: 30px;
+}
+
+/************************************************
+Grid elements
+************************************************/
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+}
+
+/* Style formatting for table (the "canvas") */
+table {
+  --color: none;
+  box-shadow: 0px 0px 50px 0px var(--color);
+  margin: 0 auto;
+  transition: all 1s ease;
+}
+
+/* Style formatting for table cells */
+td {
+  background-color: #fff;
+  border: 1px solid var(--color-gray-light);
+  height: 20px;
+  transition: all 0.3s ease;
+  width: 20px;
+}
+
+.td--grid-off {
+  border: 1px solid transparent;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+/************************************************
+Cards
+************************************************/
+
+/* Card style formatting */
+.card {
+  background-color: #fff;
+  border-radius: .375rem;
+  box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+  margin: 1rem;
+  padding: 10px 30px 30px 30px;
+}
+
+/* Wrapper for both columns */
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+}
+
+/* Wrapper for "Settings" column */
+.col-left {
+  display: flex;
+  flex: 1 3 0%;
+  flex-flow: column wrap;
+}
+
+/* Wrapper for "Canvas" column */
+.col-right {
+  flex: 3 1 0%;
+  /* transition: all 1s ease; */
+}
+
+.card__canvas {
+  display: none;
+}
+
+.card__canvas__text {
+  display: flex;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.left,
+.right {
+  flex: 50%;
+}
+
+.card__tools,
+.card__color {
+  display: none;
+  max-width: 100%;
+}
+
+/* Wrapper for form */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapping form rows */
+.form__input,
+.form__buttons {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  min-width: 0;
+  width: 100%;
+  justify-items: space-around;
+}
+
+/************************************************
+Input
+************************************************/
+
+/* Wrapping and sizing for form inputs */
+button.input,
+input.input {
+  flex: 1;
+  margin: .5rem;
+  min-width: 75px;
+  width: 0;
+}
+
+/* Style formatting for form inputs */
+.input {
+  background-color: #fff;
+  border: 1px solid var(--color-gray-light);
+  border-radius: .375rem;
+  color: var(--color-gray-dark);
+  min-width: 0;
+  padding: 15px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+/* Hiding input outline when clicked */
+.input:focus {
+  outline: 0;
+}
+
+/* Emphasize input item mouseover */
+.input:hover,
+.tool:hover {
+  box-shadow: 2px 2px 6px 0px var(--color-gray-light);
+}
+
+.input__submit:active,
+.input__reset:active,
+.tool:active {
+  box-shadow: 1px 1px 0px 0px var(--color-gray-light);
+}
+
+.input::placeholder {
+  opacity: 0.3;
+}
+
+.input:focus::placeholder {
+  opacity: 0;
+}
+
+/************************************************
+Tools
+************************************************/
+
+/* Style formatting for tool buttons */
+.tool {
+  background: center center no-repeat;
+  background-color: #fff;
+  border: 1px solid var(--color-gray-light);
+  border-radius: .375rem;
+  color: var(--color-gray-dark);
+  height: 50px;
+  margin: .5rem;
+  padding: 10px;
+  transition: all 0.2s ease;
+  width: 50px;
+}
+
+.tool:focus {
+  outline: 0;
+}
+
+.tool--on {
+  opacity: 0.3;
+}
+
+
+.tool.tool--on:hover {
+  box-shadow: none;
+}
+
+.canvas__backlight-off {
+  box-shadow: none;
+}
+
+.toast {
+  display: none;
+  /* width: 100%; */
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+}
+
+.alert {
+  align-items: center;
+  background-color: rgba(117, 117, 117, 0.5);
+  border-radius: .375rem;
+  /* bottom: 0; */
+  box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+  color: white;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  /* left: 0; */
+  margin: 1rem;
+  padding: 20px;
+  /* position: absolute; */
+  /* right: 0; */
+  /* z-index: 100; */
+}
+
+.alert__text {
+  flex-basis: 100%;
+}
+
+.alert__close {
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/************************************************
+Color Picker
+************************************************/
+
+input[type=color] {
+  border: none;
+  height: 50px;
+  opacity: 0;
+  width: 50px;
+}
+
+/* Hide input arrow buttons ("spin" buttons) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.color-picker-bg {
+  display: inline-flex;
+  border-radius: .375rem;
+  box-shadow: 2px 2px 15px 0px var(--color-gray-dark);
+  height: 50px;
+  transition: all .2s ease;
+  width: 50px;
+}
+
+.color-picker-bg:hover {
+  box-shadow: 2px 2px 7px 0px var(--color-gray-dark);
+}
+
+.color-picker-bg:active {
+  box-shadow: 1px 1px 0px 0px var(--color-gray-dark);
+}

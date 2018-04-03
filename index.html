@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pixel Art Maker!</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Megrim">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Pixel Art Maker</h1>
+  </header>
+
+  <div class="main">
+    <div class="col-left">
+      <div class="card card__size">
+        <h2>Size</h2>
+        <form class="form">
+          <div class="form__input">
+            <input type="number" class="input input__height" name="height" min="1" placeholder="Height">
+            <input type="number" class="input input__width" name="width" min="1" placeholder="Width">
+          </div>
+          <div class="form__buttons">
+            <button type="submit" class="input input__submit">Create</button>
+            <button type="reset" class="input input__reset">Reset</button>
+          </div>
+        </form>
+      </div>
+      <div class="card card__color">
+        <h2>Color</h2>
+        <div class="color-picker-bg" style="background: #000000">
+          <input type="color" class="color-picker">
+        </div>
+      </div>
+      <div class="card card__tools card--hidden">
+        <h2>Tools</h2>
+        <div>
+          <button class="tool tool__grid" title="Toggle Grid">
+            <i class="material-icons">grid_on</i>
+          </button>
+          <button class="tool tool__backlight" title="Toggle Lights">
+            <i class="material-icons">wb_sunny</i>
+          </button>
+          <button class="tool tool__clear" title="Clear Color">
+            <i class="material-icons">crop_square</i>
+          </button>
+          <!-- <button class="tool tool__dropper" title="Color Dropper"></button> -->
+          <!-- <button class="tool tool__eraser" title="Eraser"></button> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-right">
+      <div class="card card__canvas">
+        <h2>Canvas</h2>
+        <div>
+          <div class="card__canvas__text">
+            <div class="left">
+              <h3>Left click to draw</h3>
+            </div>
+            <div class="right">
+              <h3>Right click to erase</h3>
+            </div>
+          </div>
+          <table class="canvas"></table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast">
+    <div class="alert">
+      <span class="alert__text">Please enter a valid height and width.</span>
+      <i class="material-icons alert__close">close</i>
+    </div>
+  </div>
+
+  <script src="js/designs.js"></script>
+</body>
+
+</html>
