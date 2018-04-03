@@ -250,7 +250,6 @@ Tools
   opacity: 0.3;
 }
 
-
 .tool.tool--on:hover {
   box-shadow: none;
 }
@@ -260,13 +259,14 @@ Tools
 }
 
 .toast {
-  display: none;
+  /* display: none; */
   /* width: 100%; */
   left: 0;
+  /* overflow-y: hidden; */
   right: 0;
   position: absolute;
   z-index: 100;
-  top: 0;
+  top: -100px;
 }
 
 .alert {

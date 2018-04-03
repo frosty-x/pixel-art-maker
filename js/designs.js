@@ -37,7 +37,9 @@ $(document).ready(function () {
             colorGrid();
         } else {
             // alert('Please enter a valid height and width.');
-            $('.toast').slideDown(100);
+            $('.toast').animate({
+                'top': 0
+            });
         }
         event.preventDefault();
     });
@@ -192,7 +194,10 @@ $(document).ready(function () {
     }
 
     $('.alert__close').click(function() {
-        $('.alert__close').parent().parent().hide();
+        // $('.alert__close').parent().parent().hide();
+        $('.toast').animate({
+            'top': '-100px'
+        });
     })
 
     // Change selected color using color picker
@@ -204,7 +209,9 @@ $(document).ready(function () {
     // Reset entire grid
     formReset.click(function () {
         if (canvas.children().length) {
-            $('.toast').slideUp(100);
+            $('.toast').animate({
+                'top': '-' + 100 + 'px'
+            });
             $('*').removeClass('tool--on canvas__backlight-off');
             toggleCardTools();
             toggleCardColor();
